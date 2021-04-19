@@ -30,8 +30,9 @@ def graph_parameter(node_file="Nodes_Revised.csv", arc_file="Arcs.csv", commodit
         x2, y2 = node_df.loc[node_df['nodes'] == y].values[0][1:3]
         distance = np.sqrt((x2-x1)**2 + (y2-y1)**2)
         m_distance[(x, y)] = distance
-
-    return commodity_quantity, nodes, arcs, commodity_source, commodity_sink, m_distance
+        
+    final_list = [commodity_quantity, nodes, arcs, commodity_source, commodity_sink, m_distance]
+    return final_list
 
 if __name__ == "__main__":
     print(graph_parameter())
